@@ -10,14 +10,13 @@ and simulate the passing of time.*/
 //This is the QueueClass
 #include <iostream>
 #include <vector>
-using namespace std;
 
 #pragma once
 class QueueClass
 {
 private:
 	int maxSize;
-	vector<char> queVect;
+	std::vector<char> queVect;
 	int front;
 	int rear;
 	int nItems;
@@ -64,8 +63,8 @@ public:
 	void displayQueue()
 	{
 		for (int i = 0; i < nItems; i++)
-			cout << queVect[i] << " ";
-		cout << endl;
+			std::cout << queVect[i] << " ";
+		std::cout << endl;
 	}
 
 	//Function to find if the queue is full
@@ -96,7 +95,7 @@ public:
 class SuperMarketClass
 {
 private:
-	vector<QueueClass> ourVector; //Master vector to store all the queues
+	std::vector<QueueClass> ourVector; //Master vector to store all the queues
 	int numOfQueues, numOfElements;
 public:
 
@@ -153,11 +152,11 @@ public:
 		int i = 0; //Variable for the number of queues
 		for (i; i < numOfQueues; i++)
 		{
-			cout << "- - - - - -\n"
+			std::cout << "- - - - - -\n"
 				<< "Cashier " << i + 1 << " | ";
 			ourVector[i].displayQueue();
 		}
-		cout << "- - - - - -\n";
+		std::cout << "- - - - - -\n";
 	}
 
 	//Function to insert into all queues (for testing purposes)
